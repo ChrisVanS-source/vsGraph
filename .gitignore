@@ -1,0 +1,14 @@
+x64
+_minted-*
+*.synctex.gz
+*.vcxproj.user
+*.aux
+*.log
+*.pdf
+.vs/
+*~
+linux64
+cuda64
+Debug/
+Release/
+vcpkg_installed

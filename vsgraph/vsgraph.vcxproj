@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e34e64c7-81fb-4e5f-bbc9-f1e59f6eb834}</ProjectGuid>
+    <RootNamespace>vsgraph</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.8.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;VSGRAPH_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;VSGRAPH_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;VSGRAPH_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)Public;$(ProjectDir)amd_utils;$(ProjectDir)nvidia_utils</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>nvidia_utils.lib;amd_utils.lib;%(AdditionalDependencies);cudart.lib;cudadevrt.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)\$(Configuration)\HIP_clang;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;VSGRAPH_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)Public;$(ProjectDir)amd_utils;$(ProjectDir)nvidia_utils</AdditionalIncludeDirectories>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>nvidia_utils.lib;amd_utils.lib;%(AdditionalDependencies);cudart.lib;cudadevrt.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)\$(Configuration)\HIP_clang;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Private\qalgorithm_i.h" />
+    <ClInclude Include="Private\qboolean_i.h" />
+    <ClInclude Include="Private\qdefines.h" />
+    <ClInclude Include="Private\qgpu_traits.h" />
+    <ClInclude Include="Private\qgraph_backward.h" />
+    <ClInclude Include="Private\qgraph_function_gpu.h" />
+    <ClInclude Include="Private\qgraph_gpu.h" />
+    <ClInclude Include="Private\qgraph_gpu_memory.h" />
+    <ClInclude Include="Private\qgraph_visitor.h" />
+    <ClInclude Include="Private\qgraph_enum.h" />
+    <ClInclude Include="Private\qgraph_forward.h" />
+    <ClInclude Include="Private\qgraph_function.h" />
+    <ClInclude Include="Private\qgraph_generator.h" />
+    <ClInclude Include="Private\qgraph_i.h" />
+    <ClInclude Include="Private\qgraph_lifecycle.h" />
+    <ClInclude Include="Private\qgraph_mapfunc.h" />
+    <ClInclude Include="Private\qgraph_operation.h" />
+    <ClInclude Include="Private\qgraph_proto.h" />
+    <ClInclude Include="Private\qgraph_prune.h" />
+    <ClInclude Include="Private\qgraph_remap.h" />
+    <ClInclude Include="Private\qgraph_sweep.h" />
+    <ClInclude Include="Private\qgraph_traits.h" />
+    <ClInclude Include="Private\qimmhss.h" />
+    <ClInclude Include="Private\qinteger_i.h" />
+    <ClInclude Include="Private\qiterator_i.h" />
+    <ClInclude Include="Private\qpci_pattern.h" />
+    <ClInclude Include="Private\qrecorder_i.h" />
+    <ClInclude Include="Private\qrecorder_traits.h" />
+    <ClInclude Include="Private\qscalar_defines.h" />
+    <ClInclude Include="Private\qscalar_func1.h" />
+    <ClInclude Include="Private\qscalar_i.h" />
+    <ClInclude Include="Private\qscalar_traits.h" />
+    <ClInclude Include="Private\qworkspace_gpu_memory.h" />
+    <ClInclude Include="Private\qworkspace_i.h" />
+    <ClInclude Include="Public\qalgorithm.h" />
+    <ClInclude Include="Public\qboolean.h" />
+    <ClInclude Include="Public\qdual.h" />
+    <ClInclude Include="Public\qexception.h" />
+    <ClInclude Include="Public\qgraph.h" />
+    <ClInclude Include="Public\qinteger.h" />
+    <ClInclude Include="Public\qiterator.h" />
+    <ClInclude Include="Public\qrecorder.h" />
+    <ClInclude Include="Public\qscalar.h" />
+    <ClInclude Include="Public\qstream.h" />
+    <ClInclude Include="Public\qstring.h" />
+    <ClInclude Include="Public\qtype_traits.h" />
+    <ClInclude Include="Public\qutils.h" />
+    <ClInclude Include="Public\qvector.h" />
+    <ClInclude Include="Public\qworkspace.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Private\qalgorithm.cpp" />
+    <ClCompile Include="Private\qboolean.cpp" />
+    <ClCompile Include="Private\qcpu_utils.cpp" />
+    <ClCompile Include="Private\qexception.cpp" />
+    <ClCompile Include="Private\qgpu_utils.cpp" />
+    <ClCompile Include="Private\qgraph.cpp" />
+    <ClCompile Include="Private\qgraph_backward.cpp" />
+    <ClCompile Include="Private\qgraph_operation_boolean.cpp" />
+    <ClCompile Include="Private\qgraph_operation_integer.cpp" />
+    <ClCompile Include="Private\qgraph_visitor.cpp" />
+    <ClCompile Include="Private\qgraph_forward.cpp" />
+    <ClCompile Include="Private\qgraph_function.cpp" />
+    <ClCompile Include="Private\qgraph_generator.cpp" />
+    <ClCompile Include="Private\qgraph_i.cpp" />
+    <ClCompile Include="Private\qgraph_lifecycle.cpp" />
+    <ClCompile Include="Private\qgraph_map_func1.cpp" />
+    <ClCompile Include="Private\qgraph_map_func2.cpp" />
+    <ClCompile Include="Private\qgraph_operation.cpp" />
+    <ClCompile Include="Private\qgraph_prune.cpp" />
+    <ClCompile Include="Private\qgraph_remap.cpp" />
+    <ClCompile Include="Private\qgraph_signature.cpp" />
+    <ClCompile Include="Private\qinteger.cpp" />
+    <ClCompile Include="Private\qiterator.cpp" />
+    <ClCompile Include="Private\qrecorder.cpp" />
+    <ClCompile Include="Private\qrecorder_i.cpp" />
+    <ClCompile Include="Private\qscalar.cpp" />
+    <ClCompile Include="Private\qscalar_func1.cpp" />
+    <ClCompile Include="Private\qscalar_func2.cpp" />
+    <ClCompile Include="Private\qscalar_gaussian.cpp" />
+    <ClCompile Include="Private\qscalar_power.cpp" />
+    <ClCompile Include="Private\qscalar_traits.cpp" />
+    <ClCompile Include="Private\qworkspace.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.8.targets" />
+  </ImportGroup>
+</Project>
